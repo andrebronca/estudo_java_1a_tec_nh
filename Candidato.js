@@ -2,7 +2,7 @@ class Candidato {
     constructor(id, nome, nota){
         this.id = id;
         this.nome = nome;
-	    this.nota = nota;
+	this.nota = nota;
     }
 }
 
@@ -19,3 +19,12 @@ function exibeTodos(lista){
     }
 }
 
+function validarNotas(lista){
+   for(let c in lista){
+      if (lista[c].nota > NOTA_CORTE){
+         aprovados.push(lista[c]);
+      } else {
+         delete candidatos[c];
+      }
+   }
+}
